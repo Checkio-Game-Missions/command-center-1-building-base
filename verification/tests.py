@@ -29,31 +29,31 @@ TESTS = {
     "1. Init": [
         prepare_test(middle_code="Building(1, 1, 2, 2)"),
         prepare_test(middle_code="Building(1, 1, 2, 2, 10)"),
-        prepare_test(middle_code="Building(0.54345, 1.12313, 2./6, 3.3 * 5, 1./2)")
+        prepare_test(middle_code="Building(1000, 333 * 3, 2 + 6, 10 / 2, 20 - 5)")
     ],
     "2. Str": [
         prepare_test(test="str(Building(1, 1, 2, 2))",
                      answer="Building(1, 1, 2, 2, 10)", ),
-        prepare_test(test="str(Building(0.2, 1, 2, 2.2, 3.5))",
-                     answer="Building(0.2, 1, 2, 2.2, 3.5)", ),
+        prepare_test(test="str(Building(0.2, 1, 2, 2, 3))",
+                     answer="Building(0.2, 1, 2, 2, 3)", ),
     ],
     "3. Corners": [
         prepare_test(test="Building(1, 1, 2, 2).corners()",
                      answer={"south-west": [1, 1], "north-west": [3, 1], "north-east": [3, 3],
                              "south-east": [1, 3]}),
-        prepare_test(test="Building(100.5, 0.5, 24.3, 12.2, 3).corners()",
-                     answer={"north-east": [112.7, 24.8], "north-west": [112.7, 0.5],
-                             "south-west": [100.5, 0.5], "south-east": [100.5, 24.8]}),
+        prepare_test(test="Building(100, 0, 24, 12, 3).corners()",
+                     answer={"north-east": [112, 24], "north-west": [112, 0],
+                             "south-west": [100, 0], "south-east": [100, 24]}),
     ],
     "4. Area, Volume": [
         prepare_test(test="Building(1, 1, 2, 2, 100).area()",
                      answer=4),
-        prepare_test(test="Building(100, 100, 135.5, 2000.1).area()",
-                     answer=271013.55),
+        prepare_test(test="Building(100, 100, 135, 2000).area()",
+                     answer=270000),
         prepare_test(test="Building(1, 1, 2, 2, 100).volume()",
                      answer=400),
-        prepare_test(test="Building(100, 100, 135.5, 2000.1).volume()",
-                     answer=2710135.5),
+        prepare_test(test="Building(100, 100, 135, 2000).volume()",
+                     answer=2700000),
     ]
 
 }
