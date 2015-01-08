@@ -1,0 +1,126 @@
+<style>
+    pre.example {
+        border: 1px solid #aaa;
+        border-radius: 3px;
+        background: #eee;
+        margin-left: 20px;
+        padding: 5px;
+        overflow: auto;
+    }
+
+    p.indent {
+        margin-left: 20px;
+    }
+</style>
+
+<p>
+    The good planning is very important part of building process.
+    In our base all buildings will be rectangular and all streets (we will build roads and parks later, when War is over)
+    laid along south-north and east-west lines in a glorious grid. Before we get started, we to create a
+    class to represent the perfect building.
+</p>
+
+<p>
+    Because all the buildings in the city are rectangular and their walls are parallel to the
+    streets, we can define any building using only the coordinates of South-Western corner as two
+    arguments (the length of the west to east walls, and the length of the north to south wall)
+    along with the height of the building. These values are described as positive numbers using
+    conventional units.
+    <strong>The origin point of our coordinate system lies in the South-West</strong>
+    , as a result the northern corner ends up having the greater coordinate value than the southern
+    corner. To complete this mission we need to use a couple operations. See the class description
+    below.
+</p>
+
+<p>
+    <em>class</em> <strong>Building</strong><em>(south, west, width_WE, width_NS, height=10)</em>
+</p>
+<p class="indent">
+    Returns a new Building instance with the South-West corner at [<em>south</em>, <em>west</em>]
+    coordinates,
+    the size is <em>width_WE</em> by <em>width_NS</em> and the height of the building is
+    <em>height</em>.
+    "height" is a positive number with a default value of 10.
+
+</p>
+
+<pre class="example">
+>>> Building(10, 10, 1, 2, 2)
+Building(10, 10, 1, 2, 2)
+>>> Building(0, 0, 10, 25)
+Building(0, 0, 10, 25, 10)
+</pre>
+<br>
+<p>
+    <strong>corners</strong>()
+</p>
+<p class="indent">
+    Returns a dictionary with the coordinates of the building corners. The dictionary has following
+    keys: "north-west", "north-east", "south-west", "south-east". The values are lists or tuples
+    with two numbers.
+
+</p>
+<pre class="example">
+>>> Building(1, 2, 2, 2).corners()
+{"north-west": [3, 2], "north-east": [3, 4], "south-west": [1, 2], "south-east": [1, 4]}
+</pre>
+<br>
+<p>
+    <strong>area</strong>()
+</p>
+<p class="indent">
+    Returns the area of the building.
+</p>
+<pre class="example">
+>>> Building(1, 25, 4, 2).area()
+8
+</pre>
+<br>
+<p>
+    <strong>volume</strong>()
+</p>
+<p class="indent">
+    Returns the volume of the building.
+</p>
+<pre class="example">
+>>> Building(1, 25, 4, 2, 101).volume()
+808
+</pre>
+<br>
+<p>
+    <strong>__repr__</strong>()
+</p>
+<p class="indent">
+    This is a string representation of the Building. This method is used for "print" or "str"
+    conversion. Returns the string in the following view:<br>
+    "Building({south}, {west}, {width_we}, {width_ns}, {height})"<br>
+</p>
+<pre class="example">
+>>> str(Building(0, 0, 10, 25))
+"Building(0, 0, 10, 25, 10)"
+</pre>
+<br>
+<p>
+    In this mission all data will be correct and you don't need to implement value checking.
+</p>
+
+<p>
+    <strong>Input: </strong> Statements and expression with the Building class.
+</p>
+
+<p>
+    <strong>Output: </strong> The behaviour as described.
+</p>
+
+
+<p class="for_info_only">
+    <strong>How it is used: </strong>
+    Here you will learn how to write a simple class with minimal functionality
+    to achieve greater glory for our Empire.
+
+</p>
+
+<p>
+    <strong>Precondition:</strong>
+    All data are correct.
+</p>
